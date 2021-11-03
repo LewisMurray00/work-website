@@ -7,11 +7,24 @@ import { menuData } from '../data/MenuData';
 
 const Nav = styled.nav`
     height: 60px;
-    background: red;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    z-index:100;
+    position: fixed;
+    width: 100%;
+    background: #000;
 `;
 
 const Logo = styled(Link)`
     color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    font-style: italic;
 `;
 
 const MenuBars = styled.i`
@@ -19,11 +32,18 @@ const MenuBars = styled.i`
 `;
 
 const NavMenu = styled.div`
-
+    display: flex;
+    align-items: center;
 `;
 
 const NavMenuLinks = styled(Link)`
-
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
 `;
 
 const Navbar = () => {
@@ -32,11 +52,11 @@ const Navbar = () => {
             <Logo to="/">JW Construction</Logo>
             <MenuBars />
             <NavMenu>
-                {menuData.map((item, index)=>{
-                    <NavMenuLinks to={item.link} key={index}>
+                {menuData.map((item, index)=>(
+                    <NavMenuLinks to={item.links} key={index}>
                         {item.title}
                     </NavMenuLinks>
-                })}
+                ))}
             </NavMenu>
         </Nav>
     )
