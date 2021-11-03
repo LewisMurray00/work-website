@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { menuData } from '../data/MenuData';
+import { NavButton } from './NavButton';
 
 //Using Styled components to style
 
@@ -46,6 +47,12 @@ const NavMenuLinks = styled(Link)`
     text-decoration: none;
 `;
 
+const NavBtn = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+`;
+
 const Navbar = () => {
     return (
         <Nav>
@@ -58,6 +65,11 @@ const Navbar = () => {
                     </NavMenuLinks>
                 ))}
             </NavMenu>
+            <NavBtn>
+                <NavButton to="/contact">
+                    Contact Us
+                </NavButton>
+            </NavBtn>
         </Nav>
     )
 }
