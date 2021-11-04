@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const NavButton = styled(Link)`
  background: ${({primary}) =>(
-     primary ? '#000d1a' : 'cd853f'
+     primary ? 'blue' : 'cd853f'
  )};
  white-space: nowrap;
  outline: none;

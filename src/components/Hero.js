@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import styled, { css } from 'styled-components/macro'
 import { NavButton } from './NavButton';
 import {IoMdArrowRoundForward} from 'react-icons/io'
@@ -132,13 +132,34 @@ const Hero = ({slides}) => {
     const length = slides.length
     const timeout = useRef(null)
 
+    //Creating automated slider
+    useEffect(()=>{
+        const nextSlide = () => {
+            setCurrent(current => (current === length - 1 ? 0 : current + 1))
+        }
+        //Sets the time for the function to run every x seconds
+        timeout.current = setTimeout(nextSlide, 3000)
+
+        return function (){
+            if(timeout.current){
+                clearTimeout(timeout.current)
+            }
+        };
+    }, [current,length])
+
     //Counts up to the length until it hits the max then resets
     const nextSlide = () => {
+        if(timeout.current){
+            clearTimeout(timeout.current)
+        }
         setCurrent(current === length - 1 ? 0 : current + 1)
     }
     
     //Counts down to the length until it hits the max then resets
     const prevSlide= () => {
+        if(timeout.current){
+            clearTimeout(timeout.current)
+        }
         setCurrent(current === 0 ? length - 1 : current - 1)
     }
 

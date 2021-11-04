@@ -30,6 +30,7 @@ const Logo = styled(Link)`
 
 const MenuBars = styled(FaBars)`
     display: none;
+    color: white;
 
     @media screen and (max-width: 768px){
         display: block;
