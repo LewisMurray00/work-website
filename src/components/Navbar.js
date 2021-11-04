@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { menuData } from '../data/MenuData';
 import { NavButton } from './NavButton';
+import { FaBars } from 'react-icons/fa'
 
 //Using Styled components to style
 
@@ -28,7 +29,12 @@ const Logo = styled(Link)`
     font-style: italic;
 `;
 
-const MenuBars = styled.i`
+const MenuBars = styled(FaBars)`
+    display: none;
+
+    @media screen and (max-width: 768px){
+        display: block;
+    }
 
 `;
 
@@ -36,6 +42,10 @@ const NavMenu = styled.div`
     display: flex;
     align-items: center;
     margin-right: -48px;
+
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 `;
 
 const NavMenuLinks = styled(Link)`
@@ -52,6 +62,10 @@ const NavBtn = styled.div`
     display: flex;
     align-items: center;
     margin-right: 24px;
+
+    @media screen and (max-width: 768px){
+        display: none;
+    }
 `;
 
 const Navbar = () => {
