@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components/macro'
+import { NavButton } from './NavButton';
 
 //Styled components:
 const HeroSection = styled.section`
@@ -19,12 +20,33 @@ const HeroWrapper = styled.div`
     position: relative;
 `;
 
+const HeroSlide = styled.div``;
+const HeroSlider = styled.div``;
+const HeroImage = styled.img``;
+const HeroContent = styled.div``;
+
+
+
 //Actual component
-const Hero = () => {
+const Hero = ({slides}) => {
     return (
         <HeroSection>
             <HeroWrapper>
-                <h1>Hero</h1>
+                {slides.map((slide, index)=>{
+                    return (
+                        <HeroSlide key={index}>
+                            <HeroSlider>
+                                <HeroImage />
+                                <HeroContent>
+                                    <h1>{slide.title}</h1>
+                                    <NavButton to={slide.path} primary="true">
+                                        {slide.label}
+                                    </NavButton>
+                                </HeroContent>
+                            </HeroSlider>
+                        </HeroSlide>
+                    )
+                })}
             </HeroWrapper>
         </HeroSection>
     )
