@@ -142,7 +142,9 @@ const Hero = ({slides}) => {
         setCurrent(current === 0 ? length - 1 : current - 1)
     }
 
-
+    if(!Array.isArray(slides)|| slides.length <= 0){
+        return null
+    }
 
     return (
         <HeroSection>
@@ -150,7 +152,8 @@ const Hero = ({slides}) => {
                 {slides.map((slide, index)=>{
                     return (
                         <HeroSlide key={index}>
-                            <HeroSlider>
+                            {index === current && (
+                                <HeroSlider>
                                 <HeroImage src={slide.image} alt={slide.alt} />
                                 <HeroContent>
                                     <h1>{slide.title}</h1>
@@ -161,6 +164,7 @@ const Hero = ({slides}) => {
                                     </NavButton>
                                 </HeroContent>
                             </HeroSlider>
+                            )}
                         </HeroSlide>
                     )
                 })}
