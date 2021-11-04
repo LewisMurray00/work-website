@@ -7,6 +7,7 @@ import ImageFour from '../images/kitchen.jpeg'
 export const SliderData = [
     {
         title: "ImageOne",
+        location: "Bathrooms",
         path: "/portfolio",
         label: "View Work",
         image: ImageOne,
@@ -14,6 +15,7 @@ export const SliderData = [
     },
     {
         title: "ImageTwo",
+        location: "Extensions",
         path: "/portfolio",
         label: "View Work",
         image: ImageTwo,
@@ -21,6 +23,7 @@ export const SliderData = [
     },
     {
         title: "ImageThree",
+        location: "Gardens",
         path: "/portfolio",
         label: "View Work",
         image: ImageThree,
@@ -28,6 +31,7 @@ export const SliderData = [
     },
     {
         title: "ImageFour",
+        location: "Kitchens",
         path: "/portfolio",
         label: "View Work",
         image: ImageFour,
