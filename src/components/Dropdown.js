@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NavButton } from './NavButton'
 
 const DropdownContainer = styled.div`
     position: fixed;
@@ -15,11 +16,29 @@ const DropdownContainer = styled.div`
     opacity: 1;
 `
 
+
+
 const Dropdown = () => {
     return (
-        <div>
-            
-        </div>
+        <DropdownContainer>
+            <Icon>
+                <CloseIcon />
+            </Icon>
+            <DropdownWrapper>
+                <DropdownMenu>
+                   {menuData.map((item, index)=>{
+                        <DropdownLink to={item.link} key={index}>
+                            {item.title}
+                        </DropdownLink>
+                   })} 
+                </DropdownMenu>
+                <BtnWrap>
+                    <NavButton primary="true" round="true" big="true" to="/contact">
+                        Contact
+                    </NavButton>
+                </BtnWrap>
+            </DropdownWrapper>
+        </DropdownContainer>
     )
 }
 
