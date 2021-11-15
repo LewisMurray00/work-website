@@ -16,6 +16,7 @@ export const NavButton = styled(Link)`
  display: flex;
  justify-content: center;
  align-items: center;
+ border-radius: 15px;
  
  padding: ${({big}) =>(
      big ? '16px 40px' : '14px 24px'
