@@ -138,7 +138,7 @@ const Hero = ({slides}) => {
             setCurrent(current => (current === length - 1 ? 0 : current + 1))
         }
         //Sets the time for the function to run every x seconds
-        timeout.current = setTimeout(nextSlide, 3000)
+        timeout.current = setTimeout(nextSlide, 5000)
 
         return function (){
             if(timeout.current){
